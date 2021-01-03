@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 声明Student对象 -->
+    <bean id="myStudent" class="com.ikuta.ba02.Student">
+        <!-- 简单类型的set注入 -->
+        <property name="name" value="李四"/>
+        <property name="age" value="21"/>
+        <!-- 引用类型的set注入 -->
+        <property name="school" ref="mySchool"/>
+    </bean>
+
+    <!-- 声明School对象 -->
+    <bean id="mySchool" class="com.ikuta.ba02.School">
+        <property name="name" value="北京大学"/>
+        <property name="address" value="中国北京"/>
+    </bean>
+</beans>

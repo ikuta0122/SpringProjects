@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 声明School对象 -->
+    <bean id="mySchool" class="com.ikuta.ba03.School">
+        <property name="name" value="北京大学"/>
+        <property name="address" value="中国北京"/>
+    </bean>
+
+    <!-- 使用name属性实现构造注入 -->
+    <bean id="myStudent1" class="com.ikuta.ba03.Student">
+        <!-- 简单类型的构造注入 -->
+        <constructor-arg name="name" value="王五"/>
+        <constructor-arg name="age" value="19"/>
+        <!-- 引用类型的构造注入 -->
+        <constructor-arg name="school" ref="mySchool"/>
+    </bean>
+
+    <!-- 使用index属性实现构造注入 -->
+    <bean id="myStudent2" class="com.ikuta.ba03.Student">
+        <!-- 简单类型的构造注入 -->
+        <constructor-arg index="0" value="赵六"/>
+        <constructor-arg index="1" value="26"/>
+        <!-- 引用类型的构造注入 -->
+        <constructor-arg index="2" ref="mySchool"/>
+    </bean>
+
+    <!-- 使用index属性实现构造注入,省略index属性 -->
+    <bean id="myStudent3" class="com.ikuta.ba03.Student">
+        <!-- 简单类型的构造注入 -->
+        <constructor-arg value="张飞"/>
+        <constructor-arg value="25"/>
+        <!-- 引用类型的构造注入 -->
+        <constructor-arg ref="mySchool"/>
+    </bean>
+
+    <!-- 使用构造注入创建File -->
+    <bean id="myFile" class="java.io.File">
+        <constructor-arg name="parent" value="E:\IDEAProjects\02-DI-XML\readme.txt"/>
+        <constructor-arg name="child" value="readme.txt"/>
+    </bean>
+</beans>

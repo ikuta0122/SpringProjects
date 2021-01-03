@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- total.xml表示包含关系的配置文件
+    1.包含关系的配置文件一般不定义对象
+    2.语法机制:
+        <import resource="其他配置文件的路径" />
+    3.关键字[classpath:]类路径[class文件所在的目录]
+    4.包含关系的配置文件中,可以使用通配符[*:表示任意字符]
+        例如:<import resource="classpath:ba06/spring-*.xml" />
+        注意:包含关系的配置文件不能包含在通配符的范围之内,否则会造成死循环
+    -->
+    <!-- 加载的是文件列表 -->
+    <import resource="classpath:ba06/spring-student.xml"/>
+    <import resource="classpath:ba06/spring-school.xml"/>
+</beans>

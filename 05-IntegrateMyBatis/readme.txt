@@ -1,0 +1,21 @@
+Spring-07-IntegrateMyBatis:Spring集成MyBatis
+实现步骤
+第一步:新建MAVEN项目
+第二步:pom.xml加入依赖
+		1)Spring依赖
+		2)MyBatis依赖
+		3)MySql驱动
+		4)Spring事务的依赖
+		5)MyBatis集成Spring的依赖
+第三步:创建实体类
+第四步:创建Dao接口和Mapper文件
+第五步:创建MyBatis主配置文件
+第六步:创建Service接口和实现类，属性是Dao
+第七步:创建Spring的配置文件,声明MyBatis的对象交给Spring框架创建
+		1)数据源DataSource
+		2)SqlSessionFactory
+		3)Dao对象
+		4)声明自定义的Service
+第八步:创建测试类
+		1)获取Service对象
+		2)通过Service对象调用Dao完成数据库的访问

@@ -1,0 +1,46 @@
+动态代理的实现步骤
+第一部分:实例化代理类对象
+	1.调用Proxy的静态方法newProxyInstance()方法创建代理类并实例化代理类对象
+		public static Object newProxyInstance(
+											ClassLoader loader,  
+        									Class<?>[] interfaces,  
+        									InvocationHandler h
+        									)
+        (1)创建代理类
+			注意1:根据参数loader和interfaces调用方法 getProxyClass(loader, interfaces)[创建代理类$Proxy0]
+			注意2:$Proxy0类 实现了interfaces的接口,并继承了Proxy类. 
+        (2)实例化代理类对象
+        	注意1:根据参数h,$Proxy0调用父类Proxy的构造器,并在构造方法中把DynamicSubject传过去为h赋值,从而[实例化代理类对象$Proxy0]
+				class Proxy{  
+	    			InvocationHandler h=null;  
+	    			protected Proxy(InvocationHandler h) {  
+	       				this.h = h;  
+	    			}  
+	   			 	...  
+				}  
+	2.继承了类Proxy和实现了接口ISubject的类$Proxy0的源码分析
+		public final class $Proxy0 extends Proxy implements ISubject {  
+			......
+		    public $Proxy0(InvocationHandler invocationhandler) {  
+		        //调用父类的带参构造器将handeler传入为h赋值
+		        super(invocationhandler); 
+		    ......
+		}
+		
+第二部分:代理类对象调用业务方法
+	1.代理类对象调用业务方法,即$Proxy类对象调用业务方法
+		public final void request() {  
+		        try {
+		            super.h.invoke(this, m3, null);  
+		            return;  
+		        } catch (Error e) {  
+		        } catch (Throwable throwable) {  
+		            throw new UndeclaredThrowableException(throwable);  
+		        }  
+		    } 
+	
+	2.根据super.h.invoke(this, m3, null)可知
+		1)实际调用的对象是[InvocationHandler的实现类对象]
+		2)实际调用的方法是[InvocationHandler的实现类对象]的invoke()方法
+	
+	3.功能增强发生在[InvocationHandler的实现类对象]的invoke()方法中

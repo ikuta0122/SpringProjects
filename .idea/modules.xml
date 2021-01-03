@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01-HelloSpring/01-HelloSpring.iml" filepath="$PROJECT_DIR$/01-HelloSpring/01-HelloSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-DI-XML/02-DI-XML.iml" filepath="$PROJECT_DIR$/02-DI-XML/02-DI-XML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03-DI-Annotation/03-DI-Annotation.iml" filepath="$PROJECT_DIR$/03-DI-Annotation/03-DI-Annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04-AOP-AspectJ/04-AOP-AspectJ.iml" filepath="$PROJECT_DIR$/04-AOP-AspectJ/04-AOP-AspectJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-IntegrateMyBatis/05-IntegrateMyBatis.iml" filepath="$PROJECT_DIR$/05-IntegrateMyBatis/05-IntegrateMyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06-Transaction/06-Transaction.iml" filepath="$PROJECT_DIR$/06-Transaction/06-Transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07-Transaction-Annotation/07-Transaction-Annotation.iml" filepath="$PROJECT_DIR$/07-Transaction-Annotation/07-Transaction-Annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08-Transaction-AspectJ/08-Transaction-AspectJ.iml" filepath="$PROJECT_DIR$/08-Transaction-AspectJ/08-Transaction-AspectJ.iml" />
+    </modules>
+  </component>
+</project>

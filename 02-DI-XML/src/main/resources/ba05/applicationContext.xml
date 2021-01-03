@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 声明School对象 -->
+    <bean id="school" class="com.ikuta.ba05.School">
+        <property name="name" value="南京大学"/>
+        <property name="address" value="中国南京"/>
+    </bean>
+
+    <!-- 引用类型的主动注入 -->
+    <bean id="myStudent" class="com.ikuta.ba05.Student"
+          autowire="byType">
+        <property name="name" value="赵三"/>
+        <property name="age" value="80"/>
+    </bean>
+
+</beans>
